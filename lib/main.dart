@@ -3,6 +3,7 @@ import 'particle_field_painter.dart';
 import 'particle_field.dart';
 import 'components/sprite_sheet.dart';
 import 'package:flutter/scheduler.dart';
+import 'utils/math.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.deepPurpleAccent,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Particles Demo'),
     );
   }
 }
@@ -47,9 +48,10 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   }
 
   void _explode(){
-    double x = 100;
-    double y = 100;
-    double w = 200;
+    int x = randRange(100, 200);
+    int y = randRange(100, 200);
+
+
     _particleField.pointExplosion(x, y , 100, 0xffFF009B);
   }
 
